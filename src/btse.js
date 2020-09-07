@@ -108,15 +108,13 @@
         );
     };
 
+
     // Market Depth
-    exports.orderBook = async (symbol, depth = "10") => {
-        return request(
-            `${_market}/api/${_version}/ohlcv`,
-            {
-                symbol,
-                depth: depth.toString(),
-            }
-        );
+    exports.orderBook = async ( symbol, depth = 10 ) => {
+        return request( `${ _market }/api/${ _version }/orderbook/L2`, {
+            symbol,
+            depth,
+        } );
     };
 
     // Market Summaries
